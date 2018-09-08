@@ -30,57 +30,68 @@ class LoginScreen extends Component {
 
     return (
       <div className="app flex-row">
-        <Form
-          onSubmit={onSubmit}
-          // initialValues={{stooge: 'larry', employed: false}}
-          render={({handleSubmit, form, submitting, pristine, values}) => (
-            <form onSubmit={handleSubmit}>
-              <div>
-                <h1>Login</h1>
-                <p className="text-muted">Sign In to your account</p>
-                <InputGroup className="mb-3">
-                  <InputGroupAddon addonType="prepend">
-                    <InputGroupText>
-                      <i className="icon-user"></i>
-                    </InputGroupText>
-                  </InputGroupAddon>
-                  <Field
-                    name="username"
-                    component="input"
-                    type="text"
-                    placeholder="User Name"/>
-                </InputGroup>
-              </div>
-              <div>
-                <InputGroup className="mb-3">
-                  <InputGroupAddon addonType="prepend">
-                    <InputGroupText>
-                      <i className="icon-lock"></i>
-                    </InputGroupText>
-                  </InputGroupAddon>
-                  <Field
-                    name="password"
-                    component="input"
-                    type="password"
-                    placeholder="Password" autoComplete="current-password"/>
-                </InputGroup>
-              </div>
-              <div className="buttons">
-                <button type="submit" disabled={submitting || pristine}>
-                  Submit
-                </button>
-                <button
-                  type="button"
-                  onClick={form.reset}
-                  disabled={submitting || pristine}
-                >
-                  Reset
-                </button>
-              </div>
-              <pre>{JSON.stringify(values, 0, 2)}</pre>
-            </form>
-          )}
-        />
+        <Container>
+          <Row className="justify-content-center">
+            <Col md="8">
+              <CardGroup>
+                <Card className="p-1">
+                  <CardBody>
+                    <Form
+                      onSubmit={onSubmit}
+                      // initialValues={{stooge: 'larry', employed: false}}
+                      render={({handleSubmit, form, submitting, pristine, values}) => (
+                        <form onSubmit={handleSubmit}>
+                          <h1>Login</h1>
+                          <InputGroup className="mb-3">
+                            <InputGroupAddon addonType="prepend">
+                              <InputGroupText>
+                                <i className="icon-user"></i>
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Field
+                              name="username"
+                              component="input"
+                              type="text"
+                              placeholder="User Name"/>
+                          </InputGroup>
+                          <InputGroup className="mb-4">
+                            <InputGroupAddon addonType="prepend">
+                              <InputGroupText>
+                                <i className="icon-lock"></i>
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Field
+                              name="password"
+                              component="input"
+                              type="password"
+                              placeholder="Password" autoComplete="current-password"/>
+                          </InputGroup>
+                          <div className="buttons">
+                            <button type="submit" disabled={submitting || pristine}>
+                              Submit
+                            </button>
+                            <button
+                              type="button"
+                              onClick={form.reset}
+                              disabled={submitting || pristine}
+                            >
+                              Reset
+                            </button>
+                          </div>
+                          <pre>{JSON.stringify(values, 0, 2)}</pre>
+                        </form>
+                      )}
+                    />
+
+
+                  </CardBody>
+                </Card>
+
+              </CardGroup>
+            </Col>
+          </Row>
+
+        </Container>
       </div>
     );
   }
