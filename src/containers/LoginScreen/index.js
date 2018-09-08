@@ -1,6 +1,26 @@
 import React, {Component} from 'react';
-import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
+import {
+  Button,
+  Card,
+  CardBody,
+  CardGroup,
+  Col,
+  Container,
+  Input,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText,
+  Row
+} from 'reactstrap';
 import {Link} from 'react-router-dom';
+import {Form, Field} from 'react-final-form'
+
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
+
+const onSubmit = async values => {
+  await sleep(300)
+  window.alert(JSON.stringify(values, 0, 2))
+}
 
 
 class LoginScreen extends Component {
@@ -10,56 +30,60 @@ class LoginScreen extends Component {
 
     return (
       <div className="app flex-row">
-        <Container>
-          <Row className="justify-content-center">
-            <Col md="8">
-              <CardGroup>
-                <Card className="p-1">
-                  <CardBody>
-                    <Form>
-                      <h1>Login</h1>
-                      <p className="text-muted">Sign In to your account</p>
-                      <InputGroup className="mb-3">
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="icon-user"></i>
-                          </InputGroupText>
-                        </InputGroupAddon>
-                        <Input type="text" placeholder="Username" autoComplete="username" />
-                      </InputGroup>
-                      <InputGroup className="mb-4">
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="icon-lock"></i>
-                          </InputGroupText>
-                        </InputGroupAddon>
-                        <Input type="password" placeholder="Password" autoComplete="current-password" />
-                      </InputGroup>
-                      <Row>
-                        <Col xs="7">
-                          <Button color="primary" className="px-4">Login</Button>
-                        </Col>
-                        <Col xs="2" className="text-right">
-                          <Link to="/resetpassword">
-                          <Button color="link" className="px-0">Forgot password?</Button>
-                          </Link>
-                        </Col>
-                        <Col xs="2" className="text-right">
-                          <Link to="/createuser">
-                          <Button color="link" className="px-0">
-                            Register Now!</Button>
-                          </Link>
-                        </Col>
-                      </Row>
-                    </Form>
-                  </CardBody>
-                </Card>
-              </CardGroup>
-            </Col>
-          </Row>
-        </Container>
+        <Form
+          onSubmit={onSubmit}
+          // initialValues={{stooge: 'larry', employed: false}}
+          render={({handleSubmit, form, submitting, pristine, values}) => (
+            <form onSubmit={handleSubmit}>
+              <div>
+                <h1>Login</h1>
+                <p className="text-muted">Sign In to your account</p>
+                <InputGroup className="mb-3">
+                  <InputGroupAddon addonType="prepend">
+                    <InputGroupText>
+                      <i className="icon-user"></i>
+                    </InputGroupText>
+                  </InputGroupAddon>
+                  <Field
+                    name="username"
+                    component="input"
+                    type="text"
+                    placeholder="User Name"/>
+                </InputGroup>
+              </div>
+              <div>
+                <InputGroup className="mb-3">
+                  <InputGroupAddon addonType="prepend">
+                    <InputGroupText>
+                      <i className="icon-lock"></i>
+                    </InputGroupText>
+                  </InputGroupAddon>
+                  <Field
+                    name="password"
+                    component="input"
+                    type="password"
+                    placeholder="Password" autoComplete="current-password"/>
+                </InputGroup>
+              </div>
+              <div className="buttons">
+                <button type="submit" disabled={submitting || pristine}>
+                  Submit
+                </button>
+                <button
+                  type="button"
+                  onClick={form.reset}
+                  disabled={submitting || pristine}
+                >
+                  Reset
+                </button>
+              </div>
+              <pre>{JSON.stringify(values, 0, 2)}</pre>
+            </form>
+          )}
+        />
       </div>
     );
   }
 }
+
 export default LoginScreen;
