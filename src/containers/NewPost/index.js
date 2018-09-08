@@ -67,6 +67,7 @@ class NewPost extends Component {
               <Col xs="12">
                 <FormGroup>
                   <div className="rdw-storybook-root">
+                    <strong>Seu Leave your comment:</strong>
                     <Editor
                       toolbarClassName="toolbarClassName"
                       wrapperClassName="wrapperClassName"
