@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import { Button } from 'reactstrap';
+import { Editor } from 'react-draft-wysiwyg';
+import { EditorState } from 'draft-js';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
 import {
   Card,
   CardBody,
@@ -12,6 +15,16 @@ import {
 } from 'reactstrap';
 
 class NewPost extends Component {
+  state = {
+    editorState: EditorState.createEmpty(),
+  };
+
+  onEditorStateChange: Function = (editorState) => {
+    this.setState({
+      editorState,
+    });
+  };
+
   render() {
 
     return <Row>
@@ -53,8 +66,14 @@ class NewPost extends Component {
             <Row>
               <Col xs="12">
                 <FormGroup>
-                    <Input type="textarea" name="textarea-input" id="textarea-input" rows="9"
-                           placeholder="Content..." />
+                  <div className="rdw-storybook-root">
+                    <Editor
+                      toolbarClassName="toolbarClassName"
+                      wrapperClassName="wrapperClassName"
+                      editorClassName="editorClassName"
+                      onEditorStateChange={this.onEditorStateChange}
+                    />
+                  </div>
                 </FormGroup>
               </Col>
             </Row>
