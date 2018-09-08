@@ -203,12 +203,18 @@ const ResetPassword = Loadable({
   loading: Loading,
 });
 
+const NewPost = Loadable({
+  loader: () => import('./containers/NewPost/index'),
+  loading: Loading,
+});
+
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
   { path: '/', exact: true, name: 'Home', component: DefaultLayout },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/posts', name: 'Posts', component: Posts },
+  { path: '/newpost', name: 'New Post', component: NewPost },
   { path: '/loginscreen', name: 'Login Screen', component: LoginScreen },
   { path: '/createuser', name: 'Create User', component: CreateUser },
   { path: '/resetpassword', name: 'Reset Password', component: ResetPassword },

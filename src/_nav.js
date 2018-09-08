@@ -14,27 +14,27 @@ export default {
       badge: {
         variant: 'info',
       },
-    }, {
-      name: 'Login Screen',
-      url: '/Loginscreen',
-      icon: 'icon-speedometer',
-      badge: {
-        variant: 'info',
-      },
-    }, {
-      name: 'Create User',
-      url: '/createuser',
-      icon: 'icon-speedometer',
-      badge: {
-        variant: 'info',
-      },
-    }, {
-      name: 'Reset Password',
-      url: '/resetpassword',
-      icon: 'icon-speedometer',
-      badge: {
-        variant: 'info',
-      },
+    // }, {
+    //   name: 'Login Screen',
+    //   url: '/Loginscreen',
+    //   icon: 'icon-speedometer',
+    //   badge: {
+    //     variant: 'info',
+    //   },
+    // }, {
+    //   name: 'Create User',
+    //   url: '/createuser',
+    //   icon: 'icon-speedometer',
+    //   badge: {
+    //     variant: 'info',
+    //   },
+    // }, {
+    //   name: 'Reset Password',
+    //   url: '/resetpassword',
+    //   icon: 'icon-speedometer',
+    //   badge: {
+    //     variant: 'info',
+    //   },
     },
     // {
     //   title: true,

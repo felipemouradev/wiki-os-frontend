@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { Button } from 'reactstrap';
+import {Button} from 'reactstrap';
+
 import {
   Card,
   CardBody,
@@ -9,62 +10,68 @@ import {
   Input,
   Label,
   Row,
+  Table,
+  ListGroup, ListGroupItem
 } from 'reactstrap';
 
-class Posts extends Component {
+class MyAccount extends Component {
+  ///postingN Category Author Data
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: props.initialValue,
+      nPostingN: props.nPostingN,
+      category: props.category,
+      author: props.audio,
+      data: props.data
+    };
+  }
+
   render() {
 
-    return <Row>
+    return <Row className='center-block'>
       <Col xs="12" sm="12">
         <Card>
           <CardHeader>
             <strong><h2>New Post</h2></strong><br/>
             <strong>New Post</strong>
           </CardHeader>
-          <CardBody>
-            <Row>
-              <Col xs="8">
-                <FormGroup>
-                  <Label htmlFor="name">Name</Label>
-                  <Input type="text" id="name" placeholder="Enter your name" required/>
-                </FormGroup>
-              </Col>
-              <Col xs="4">
-                <FormGroup>
-                  <Label htmlFor="ccmonth">Category</Label>
-                  <Input type="select" name="ccmonth" id="ccmonth">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                  </Input>
-                </FormGroup>
-              </Col>
-            </Row>
 
+          <div className="animated fadeIn">
             <Row>
-              <Col xs="12">
-                <FormGroup>
-                    <Input type="textarea" name="textarea-input" id="textarea-input" rows="9"
-                           placeholder="Content..." />
-                </FormGroup>
+              <Col xl={12}>
+                <Card>
+                  <CardHeader>
+                    <i className="fa fa-align-justify"></i> Wiki <small className="text-muted">List</small>
+                  </CardHeader>
+                  <CardBody>
+                    <Table responsive hover>
+                      <thead>
+                      <tr>
+                        <th scope="col">Code User</th>
+                        <th scope="col">posting</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">author</th>
+                        <th scope="col">data</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>166</td>
+                        <td>54</td>
+                        <td>85748</td>
+                      </tr>
+                      </tbody>
+                    </Table>
+                  </CardBody>
+                </Card>
               </Col>
             </Row>
+          </div>
 
-            <Row className="float-right">
-              <Col col="6" sm="4" md="2" xl className="mb-3 mb-xl-0">
-                <Button block color="secondary">Primary</Button>
-              </Col>
-            </Row>
-          </CardBody>
         </Card>
       </Col>
 
@@ -75,4 +82,4 @@ class Posts extends Component {
 
 }
 
-export default Posts;
+export default MyAccount;
