@@ -48,7 +48,8 @@ class CreateUser extends Component {
                                 <i className="icon-user"></i>
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Field type="text" placeholder="Username" autoComplete="username"  name="username" component="input"/>
+                            <Field type="text" placeholder="Username" autoComplete="username" name="username"
+                                   component="input"/>
 
                           </InputGroup>
                           <InputGroup className="mb-3">
@@ -63,7 +64,8 @@ class CreateUser extends Component {
                                 <i className="icon-lock"></i>
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Field name="password" type="password" placeholder="Password" autoComplete="new-password" component="input"/>
+                            <Field name="password" type="password" placeholder="Password" autoComplete="new-password"
+                                   component="input"/>
                           </InputGroup>
                           <InputGroup className="mb-4">
                             <InputGroupAddon addonType="prepend">
@@ -71,7 +73,8 @@ class CreateUser extends Component {
                                 <i className="icon-lock"></i>
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Field name="repeat-password" type="password" placeholder="Repeat password" autoComplete="new-password"
+                            <Field name="repeat-password" type="password" placeholder="Repeat password"
+                                   autoComplete="new-password"
                                    component="input"/>
                           </InputGroup>
                           <div className="buttons">
@@ -104,4 +107,5 @@ class CreateUser extends Component {
     );
   }
 }
+
 export default CreateUser;

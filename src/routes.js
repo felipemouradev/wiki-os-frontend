@@ -188,20 +188,20 @@ const Posts = Loadable({
   loading: Loading,
 });
 
-const LoginScreen = Loadable({
-  loader: () => import('./containers/LoginScreen/index'),
-  loading: Loading,
-});
-
-const CreateUser = Loadable({
-  loader: () => import('./containers/CreateUser/index'),
-  loading: Loading,
-});
-
-const ResetPassword = Loadable({
-  loader: () => import('./containers/ResetPassword/index'),
-  loading: Loading,
-});
+// const LoginScreen = Loadable({
+//   loader: () => import('./containers/LoginScreen/index'),
+//   loading: Loading,
+// });
+//
+// const CreateUser = Loadable({
+//   loader: () => import('./containers/CreateUser/index'),
+//   loading: Loading,
+// });
+//
+// const ResetPassword = Loadable({
+//   loader: () => import('./containers/ResetPassword/index'),
+//   loading: Loading,
+// });
 
 const NewPost = Loadable({
   loader: () => import('./containers/NewPost/index'),
@@ -215,9 +215,9 @@ const routes = [
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/posts', name: 'Posts', component: Posts },
   { path: '/newpost', name: 'New Post', component: NewPost },
-  { path: '/loginscreen', name: 'Login Screen', component: LoginScreen },
-  { path: '/createuser', name: 'Create User', component: CreateUser },
-  { path: '/resetpassword', name: 'Reset Password', component: ResetPassword },
+  // { path: '/loginscreen', name: 'Login Screen', component: LoginScreen },
+  // { path: '/createuser', name: 'Create User', component: CreateUser },
+  // { path: '/resetpassword', name: 'Reset Password', component: ResetPassword },
   // { path: '/theme', exact: true, name: 'Theme', component: Colors },
   // { path: '/theme/colors', name: 'Colors', component: Colors },
   // { path: '/theme/typography', name: 'Typography', component: Typography },
