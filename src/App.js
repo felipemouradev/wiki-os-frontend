@@ -19,7 +19,7 @@ import { DefaultLayout } from './containers';
 import { Page404, Page500} from './views/Pages';
 import Login from './../src/containers/Login';
 import Register from './../src/containers/Register';
-import ResetPassword from './../src/containers/ResetPassword';
+import ResetPassword from './../src/containers/ResetPassword'
 
 // import { renderRoutes } from 'react-router-config';
 
