@@ -79,7 +79,7 @@ class Login extends Component {
                       <h2>Sign up</h2>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua.</p>
-                      <Link to="/new-user"><Button color="primary" className="mt-3" active>Register Now!</Button></Link>
+                      <Link to="/register"><Button color="primary" className="mt-3" active>Register Now!</Button></Link>
                     </div>
                   </CardBody>
                 </Card>
