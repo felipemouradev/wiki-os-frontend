@@ -50,7 +50,15 @@ class ResetPassword extends Component {
                                 <i className="icon-lock"></i>
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Field type="text" placeholder="Nome de usuário:" autoComplete="name" name="name" component="input" />
+                            <Field component="input" name="email">
+                              {({input, meta}) => (
+                                <div>
+                                  <Input {...input} type="text" placeholder="E-mail"/>
+                                </div>
+                              )}
+                            </Field>
+
+
                           </InputGroup>
 
                           <strong>Nome de usuario:</strong>
@@ -58,7 +66,7 @@ class ResetPassword extends Component {
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>@</InputGroupText>
                             </InputGroupAddon>
-                            <Field type="text" placeholder="Email" autoComplete="email" name="email" component="input"/>
+                            <Input type="text" placeholder="Email" autoComplete="email" name="email" component="input"/>
                           </InputGroup>
 
                           <div className="buttons">

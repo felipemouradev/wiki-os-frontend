@@ -17,7 +17,7 @@ import './scss/style.css'
 import { DefaultLayout } from './containers';
 // Pages
 import { Page404, Page500, Register } from './views/Pages';
-import Login from './../src/containers/LoginScreen';
+import Login from './../src/containers/Login';
 import NewUser from './../src/containers/CreateUser';
 import ResetPassword from './../src/containers/ResetPassword';
 
