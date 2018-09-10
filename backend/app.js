@@ -7,7 +7,7 @@ const Posts = require('./models/Posts');
 
 
 const indexPosts = require('./routes/Posts');
-const usersRouter = require('./routes/users');
+const usersRouter = require('./routes/Register');
 
 mongoose.connect('mongodb://localhost/wiki');
 mongoose.Promise = global.Promise;
@@ -28,7 +28,7 @@ app.use(function(req, res, next) {
 console.log("ok");
 
 app.use('/api/posts', indexPosts);
-app.use('/api/users', usersRouter);
+app.use('/api/register', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

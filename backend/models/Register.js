@@ -1,13 +1,24 @@
 const mongoose = require('mongoose');
 const schema = mongoose.Schema;
 
-const Users = new schema({
+const Register = new schema({
     username:{
-        type: String
+        type: String,
+        required: true
+    },
+    email:{
+        type: String,
+        required: true,
+        unique: true
     },
     password:{
-        type: String
+        type: String,
+        required: true
+    },
+    repeat_password:{
+        type: String,
+        required: true
     }
 });
 
-module.exports = mongoose.model('Users', Users);
+module.exports = mongoose.model('Register', Register);
