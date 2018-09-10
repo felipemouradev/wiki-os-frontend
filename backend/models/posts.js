@@ -1,18 +1,20 @@
 const mongoose = require('mongoose');
+const schema = mongoose.Schema;
 
-let Produtos = mongoose.Schema({
-    name: {
+const Posts = new schema({
+    name:{
         type: String,
-        required: true
+        // default: "Niome"
     },
-    category: {
+    category:{
         type: String,
-        required: true
+        enum : [1, 2, 3, 10],
+        default: 10
+        
     },
-    text: {
-        type: String,
-        required: true
+    text:{
+        type: String
     }
 });
 
-module.exports = mongoose.model('Post', Produtos);
+module.exports = mongoose.model('Posts', Posts);

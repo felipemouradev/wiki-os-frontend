@@ -1,18 +1,17 @@
-const app = require('../src/app');
-const debug = require('debug')('server');
+const app = require('../app');
+const debug = require('debug');
 const http = require('http');
-
 
 const port = normalizePort(process.env.PORT || '4000');
 app.set('port', port);
+
+
 const server = http.createServer(app);
+
+
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
-console.log('Servidor funcionando na porta:',port);
-
-
-
 
 /**
  * Normalize a port into a number, string, or false.
@@ -28,6 +27,7 @@ function normalizePort(val) {
 
     if (port >= 0) {
         // port number
+        console.log('Servidor na porta', port);
         return port;
     }
 
@@ -43,7 +43,7 @@ function onError(error) {
         throw error;
     }
 
-    let bind = typeof port === 'string'
+    const bind = typeof port === 'string'
         ? 'Pipe ' + port
         : 'Port ' + port;
 
@@ -67,8 +67,8 @@ function onError(error) {
  */
 
 function onListening() {
-    let addr = server.address();
-    let bind = typeof addr === 'string'
+    const addr = server.address();
+    const bind = typeof addr === 'string'
         ? 'pipe ' + addr
         : 'port ' + addr.port;
     debug('Listening on ' + bind);

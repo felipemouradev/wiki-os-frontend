@@ -21,7 +21,7 @@ import {
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
-const URL = 'http://localhost:4000/post';
+const URL = 'http://localhost:4000/api/posts';
 
 class NewPost extends Component {
 
