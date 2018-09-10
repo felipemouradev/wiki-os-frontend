@@ -19,8 +19,6 @@ import {
     Row,
 } from 'reactstrap';
 
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
-
 const URL = 'http://localhost:4000/api/posts';
 
 class NewPost extends Component {
